@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+       <bean id = "Cat" class = "com.whatever.pet.CatPerside" />
+       <bean id = "Dog" class = "com.whatever.pet.DogAlabay" />
+       <bean id = "Foot" class="com.whatever.hobbies.Football"/>
+       <bean id = "Bike" class="com.whatever.hobbies.Bicycle"/>
+       <bean id = "Petya" class = "com.whatever.human.HumanTalking">
+              <constructor-arg value = "Hello"/>
+              <property name = "s" value = "Petya"/>
+              <property name = "pet" ref = "Cat"/>
+              <property name = "namePet" value="Myrzik"/>
+
+       </bean>
+       <bean id = "Vasya" class = "com.whatever.human.HumanNoTalking">
+              <property name = "name" value = "Vasya"/>
+              <property name = "pet" ref = "Dog"/>
+              <property name = "petName" value = "Bobik"/>
+              <property name="hobbies">
+                     <list>
+                            <ref bean="Foot"></ref>
+                            <ref bean="Bike"></ref>
+                     </list>
+              </property>
+       </bean>
+
+</beans>
